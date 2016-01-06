@@ -1,14 +1,64 @@
-Monica Silva's project
+Monica Silva's project "Website Optimization project #4"
+BRIEF:
 
-OPTIMIZATIONS 
+	- The project is basically made to learn how to optimize a website using different tools, like the inspect element, reducing the size of the images, and putting inline style, among other things. 
 
-I CHANGED THE LINE 552 INSTEAD OF HAVING 200 PIZZAS, NOW THE PROGRAM HAS 20 AND THE APP IS FASTE.
 
-FOR THE UPDATE POSITION FUNCTION I CHANGED THE QUERYSELECTORALL TO GETELEMENTSBYCLASSNAME, BECAUSE IS MORE ESPECIFIC, 
-ALSO I ADDED MORE VARIABLES BECAUSE THIS MAKE FASTER THE APP
+There are two projects:
+		
+		1.  The Portfolio
+		2.  Cam's Pizzeria 
 
-I ALSO FIND THAT THE FUNCTION CHANGESLIDEDSIZES NEED TO BE FIXED AND I LEFT THE CODE THAT I NEED TO PUT IN COMMENTS BECAUSE IT DIDN'T WORK WELL.
+	The first project is located in:
+		monica's projectnumber4/ index.html
 
-ALSO FOR THE PAINT OPTIMIZATION I ADDED IN THE STYLE.CSS FILE, IN THE .MOVER THE WILL-CHANGE: TRANSFORM;
+	The second project is located in:
+		monica's projectnumber4/ views/ pizza.html
 
-NOW THE APP RUN FASTER. 
+
+STEPS TO OPEN THE FILE
+
+		1.  To open the websites you need to go to this github link: 
+				https://github.com/monsyc/monica-s-projectnumber4.git
+
+		2. 	Download the zip file decompress the file.
+
+		3. 	Open the folder
+
+		4. 	For the 1st project and the second project, just double click on the files. (index.html and pizza.html)
+
+		5. You can use the inspect element to see the optimization of the website. 
+
+
+
+CHANGES IN THE CODE
+
+		1. First project "The portfolio"
+
+			- In line 15 in the index.html I added the inline style, to make it faster. I used the tool "Critical Path Generator". And I used a web host to put the link in the tool.  
+
+
+		2. Second project "Cam's Pizzeria"
+
+			- I optimize the image of pizzeria.jpg, making a smaller file. 
+
+			- I added 41, 42 lines in the style.css file to delete the green boxes. 
+
+			- In line 444 in main.js I change the (document.querySelector("#randomPizzas")) to document.getElementById().
+
+			- In line 472, 472, I changed the queryselector all to document.getElementsByClassName("randomPizzaContainer").
+
+			- In line 474 I added the variable. (var container) to insert that in 475 and 476.
+
+			-In line 525 I changed the queryselectorall to document.getElementsByClassName('mover')
+
+			- In line 526 I added the variable (var=phase2), oustside the for statement.
+
+			- In line 528 I added the variable (var phase;) outside the for statement.
+
+			- In line 555 I changed the queryselectorall to document.getElementById('movingPizzas1').
+
+			- In line 557 I changed the 200 to 24 because is a multiple of the current cols value. 
+
+			- In line 565 I added the variable of 555. 
+

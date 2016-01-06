@@ -441,7 +441,7 @@ var resizePizzas = function(size) {
    // Returns the size difference to change a pizza element from one size to another. Called by changePizzaSlices(size).
   function determineDx (elem, size) {
     var oldWidth = elem.offsetWidth;
-    var windowWidth = document.querySelector("#randomPizzas").offsetWidth;
+    var windowWidth = document.getElementById("randomPizzas").offsetWidth;
     var oldSize = oldWidth / windowWidth;
 
     // TODO: change to 3 sizes? no more xl?
@@ -524,14 +524,12 @@ function updatePositions() {
 
   var items = document.getElementsByClassName('mover'); // I CHANGED THIS INSTEAD OF querySelectorAll , CHAANGING THIS MAKE IT MORE SPECIFIC
   var phase2 = document.body.scrollTop / 1250; // I ADDED THIS VAR THIS MAKE THE CODE FASTER
-  
-
   // ADDED A VAR PHASE
   var phase;
   for (var i = 0; i < items.length; i++) {
     phase = Math.sin( phase2 + (i % 5)); 
     var items2 = items[i].basicLeft; // I ADDED THIS VAR THIS MAKE THE CODE FASTER
-    items[i].style.left = items2 + 100 * phase + 'px';   // THIS IS THE PART THAT I NEED TO CHANGE
+    items[i].style.left = items2 + 100 * phase + 'px';   
   }
   
  
@@ -555,8 +553,9 @@ document.addEventListener('DOMContentLoaded', function() {
   var s = 256;
   var elem;
   var movingPizzas = document.getElementById('movingPizzas1'); // ADDED A VARIABLE
-  
-  for (var i = 0; i < 24; i++) { // I CHANGED INSTEAD OF 200 TO 20 AND NOW IS FASTER, WE REMOVE A LOT OF UNNECESSARY PIZZAS.
+  var x = "Total Height: " + screen.height + "px";
+
+  for (var i = 0; i < 24; i++) { // I CHANGED INSTEAD OF 200 TO 24 AND NOW IS FASTER, WE REMOVE A LOT OF UNNECESSARY PIZZAS.
     elem = document.createElement('img');
     elem.className = 'mover';
     elem.src = "images/pizza.png";
