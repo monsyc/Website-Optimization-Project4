@@ -465,12 +465,15 @@ var resizePizzas = function(size) {
     return dx;
   }
 
+
+  // change the querySelectorAll to getElementsByClassName
   // Iterates through pizza elements on the page and changes their widths
   function changePizzaSizes(size) {
-    for (var i = 0; i < document.querySelectorAll(".randomPizzaContainer").length; i++) {
-      var dx = determineDx(document.querySelectorAll(".randomPizzaContainer")[i], size);
-      var newwidth = (document.querySelectorAll(".randomPizzaContainer")[i].offsetWidth + dx) + 'px';
-      document.querySelectorAll(".randomPizzaContainer")[i].style.width = newwidth;
+    for (var i = 0; i < document.getElementsByClassName("randomPizzaContainer").length; i++) {
+      var dx = determineDx(document.getElementsByClassName("randomPizzaContainer")[i], size);
+      var container =  document.getElementsByClassName("randomPizzaContainer");
+      var newwidth = (container [i].offsetWidth + dx) + 'px';
+      container [i].style.width = newwidth;
     }
   }
 
@@ -523,9 +526,10 @@ function updatePositions() {
   var phase2 = document.body.scrollTop / 1250; // I ADDED THIS VAR THIS MAKE THE CODE FASTER
   
 
-  
+  // ADDED A VAR PHASE
+  var phase;
   for (var i = 0; i < items.length; i++) {
-    var phase = Math.sin( phase2 + (i % 5)); 
+    phase = Math.sin( phase2 + (i % 5)); 
     var items2 = items[i].basicLeft; // I ADDED THIS VAR THIS MAKE THE CODE FASTER
     items[i].style.left = items2 + 100 * phase + 'px';   // THIS IS THE PART THAT I NEED TO CHANGE
   }
@@ -549,15 +553,18 @@ window.addEventListener('scroll', updatePositions);
 document.addEventListener('DOMContentLoaded', function() {
   var cols = 8;
   var s = 256;
-  for (var i = 0; i < 20; i++) { // I CHANGED INSTEAD OF 200 TO 20 AND NOW IS FASTER, WE REMOVE A LOT OF UNNECESSARY PIZZAS.
-    var elem = document.createElement('img');
+  var elem;
+  var movingPizzas = document.getElementById('movingPizzas1'); // ADDED A VARIABLE
+  
+  for (var i = 0; i < 24; i++) { // I CHANGED INSTEAD OF 200 TO 20 AND NOW IS FASTER, WE REMOVE A LOT OF UNNECESSARY PIZZAS.
+    elem = document.createElement('img');
     elem.className = 'mover';
     elem.src = "images/pizza.png";
     elem.style.height = "100px";
     elem.style.width = "73.333px";
     elem.basicLeft = (i % cols) * s;
     elem.style.top = (Math.floor(i / cols) * s) + 'px';
-    document.querySelector("#movingPizzas1").appendChild(elem);
+    movingPizzas.appendChild(elem); // ADDED A VARIABLE
   }
   updatePositions();
 });
