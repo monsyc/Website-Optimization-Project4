@@ -46,19 +46,21 @@ CHANGES IN THE CODE
 
 			- In line 444 in main.js I change the (document.querySelector("#randomPizzas")) to document.getElementById().
 
-			- In line 472, 472, I changed the queryselector all to document.getElementsByClassName("randomPizzaContainer").
+			- In line 473, I changed the queryselector all to document.getElementsByClassName("randomPizzaContainer").
 
-			- In line 474 I added the variable. (var container) to insert that in 475 and 476.
+			- In line 474 I added var dx
 
-			-In line 525 I changed the queryselectorall to document.getElementsByClassName('mover')
+			- in line 475 I added the var newwidth
 
-			- In line 526 I added the variable (var=phase2), oustside the for statement.
+			-In line 526 I changed the queryselectorall to document.getElementsByClassName('mover')
 
-			- In line 528 I added the variable (var phase;) outside the for statement.
+			- In line 527 I added the variable (var=phase2), oustside the for statement.
 
-			- In line 555 I changed the queryselectorall to document.getElementById('movingPizzas1').
+			- In line 529 I added the variable (var phase;) outside the for statement.
+
+			- In line 556 I changed the queryselectorall to document.getElementById('movingPizzas1').
 
 			- In line 557 I changed the 200 to 24 because is a multiple of the current cols value. 
 
-			- In line 565 I added the variable of 555. 
+			
 

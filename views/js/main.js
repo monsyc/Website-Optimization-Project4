@@ -469,11 +469,12 @@ var resizePizzas = function(size) {
   // change the querySelectorAll to getElementsByClassName
   // Iterates through pizza elements on the page and changes their widths
   function changePizzaSizes(size) {
-    for (var i = 0; i < document.getElementsByClassName("randomPizzaContainer").length; i++) {
-      var dx = determineDx(document.getElementsByClassName("randomPizzaContainer")[i], size);
-      var container =  document.getElementsByClassName("randomPizzaContainer");
-      var newwidth = (container [i].offsetWidth + dx) + 'px';
-      container [i].style.width = newwidth;
+    // Took the variable out of the loop to do it just once
+    var rpizza = document.getElementsByClassName("randomPizzaContainer");  
+    var dx = determineDx(rpizza[0], size); 
+    var newwidth = (rpizza [0].offsetWidth + dx) + 'px';
+    for (var i = 0; i < rpizza.length; i++) { 
+      rpizza [i].style.width = newwidth;
     }
   }
 
@@ -554,8 +555,9 @@ document.addEventListener('DOMContentLoaded', function() {
   var elem;
   var movingPizzas = document.getElementById('movingPizzas1'); // ADDED A VARIABLE
   var x = "Total Height: " + screen.height + "px";
-
-  for (var i = 0; i < 24; i++) { // I CHANGED INSTEAD OF 200 TO 24 AND NOW IS FASTER, WE REMOVE A LOT OF UNNECESSARY PIZZAS.
+  var result = Math.floor((screen.height * cols) / s);
+  console.log(result);
+  for (var i = 0; i < result; i++) { // I CHANGED INSTEAD OF 200 TO 24 AND NOW IS FASTER, WE REMOVE A LOT OF UNNECESSARY PIZZAS.
     elem = document.createElement('img');
     elem.className = 'mover';
     elem.src = "images/pizza.png";
