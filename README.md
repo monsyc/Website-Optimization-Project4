@@ -37,10 +37,12 @@ CHANGES IN THE CODE
 
 			- In line 15 in the index.html I added the inline style, to make it faster. I used the tool "Critical Path Generator". And I used a web host to put the link in the tool.  
 
+			- Remove line 11 in the index.html file to make it faster.
+
 
 		2. Second project "Cam's Pizzeria"
 
-			- I optimize the image of pizzeria.jpg, making a smaller file. 
+			- I optimize the image of pizzeria.jpg, making a smaller file. 			
 
 			- I added 41, 42 lines in the style.css file to delete the green boxes. 
 
